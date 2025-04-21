@@ -1,4 +1,4 @@
-namespace Hactazia.UdonList
+﻿namespace Hactazia.UdonList
 {
     public static class ListExtensions
     {
@@ -6,7 +6,6 @@ namespace Hactazia.UdonList
         /// Creates a new array of the specified length and fills it with the specified value.
         /// </summary>
         /// <param name="length">The length of the array to create.</param>
-        /// <param name="fillValue">The value to fill the array with.</param>
         /// <typeparam name="T">The type of the array.</typeparam>
         /// <returns>A new array of the specified length filled with the specified value.</returns>
         public static T[] New<T>(int length)
