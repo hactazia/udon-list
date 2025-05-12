@@ -1,8 +1,8 @@
 {
-    "name": "Hactazia.UdonList",
+    "name": "Hactazia.Types",
     "rootNamespace": "",
     "references": [
-        "GUID:99835874ee819da44948776e0df4ff1d"
+        "UdonSharp.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -12,5 +12,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": true
+    "noEngineReferences": false
 }

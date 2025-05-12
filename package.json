@@ -1,11 +1,11 @@
 {
-  "name": "fr.hactazia.udon-list",
-  "displayName": "Hactazia - List",
-  "version": "0.0.2",
-  "description": "List Extension for UdonSharp",
-  "url": "https://github.com/hactazia/udon-list",
+  "name": "fr.hactazia.udon-types",
+  "displayName": "Hactazia - Types",
+  "version": "0.0.3",
+  "description": "A collection of Udon types for UdonSharp.",
+  "url": "https://github.com/hactazia/udon-types",
   "bugs": {
-    "url": "https://github.com/hactazia/udon-list/issues"
+    "url": "https://github.com/hactazia/udon-types/issues"
   },
   "license": "MIT",
   "author": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hactazia/udon-list"
+    "url": "https://github.com/hactazia/udon-types"
   },
   "vpmDependencies": {
     "com.vrchat.worlds": "^3.8.x"

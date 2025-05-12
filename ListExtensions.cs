@@ -1,4 +1,6 @@
-﻿namespace Hactazia.UdonList
+﻿using UnityEngine;
+
+namespace Hactazia.Types
 {
     public static class ListExtensions
     {
@@ -91,11 +93,12 @@
 
         public static bool Contains<T>(this T[] array, T item)
         {
-            if (array == null || array.Length == 0) return false;
+            if (array == null || array.Length == 0)
+                return false;
             foreach (var t in array)
                 if (t.Equals(item))
                     return true;
-            return true;
+            return false;
         }
 
         public static T[] RemoveMany<T>(this T[] array, T item, int maxCount = int.MaxValue)
@@ -110,7 +113,50 @@
                     array = array.RemoveAt(i);
                     i--;
                 }
+
             return array;
+        }
+
+        public static T GetAt<T>(this T[] array, int index)
+        {
+            return GetAt(array, index, default);
+        }
+
+        public static T GetAt<T>(this T[] array, int index, T defaultValue)
+        {
+            if (array == null || array.Length == 0) return defaultValue;
+            if (index < 0 || index >= array.Length) return defaultValue;
+            return array[index];
+        }
+
+        public static T[] SetAt<T>(this T[] array, int index, T value)
+        {
+            if (array == null || array.Length == 0) return array;
+            if (index < 0 || index >= array.Length) return array;
+            var newArray = new T[array.Length];
+            array.CopyTo(newArray, 0);
+            newArray[index] = value;
+            return newArray;
+        }
+
+        public static T[] Fill<T>(this T[] array, T value, int start, int count)
+        {
+            if (array == null || array.Length == 0) return array;
+            if (start < 0 || start >= array.Length) return array;
+            if (count < 0 || start + count > array.Length) return array;
+            for (var i = start; i < start + count; i++)
+                array[i] = value;
+            return array;
+        }
+
+        public static string ToArrayString<T>(this T[] array)
+        {
+            if (array == null || array.Length == 0) return "[]";
+            var str = "[";
+            for (var i = 0; i < array.Length; i++)
+                str += $"{array[i]}{(i < array.Length - 1 ? ", " : "")}";
+            str += "]";
+            return str;
         }
     }
 }
